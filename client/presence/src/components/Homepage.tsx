@@ -13,17 +13,19 @@ const Homepage = () => {
           Presence
         </h1>
 
-        <p className="xs:text-lg sm:text-xl md:text-2xl lg:text-3xl mt-6 max-w-lg mx-auto text-gray-300">
+        <p className="xs:text-lg sm:text-xl md:text-2xl lg:text-3xl mt-6 max-w-lg mx-auto text-gray-300
+        font-fira-sans">
           Welcome to Presence — a simple and smart way to manage attendance efficiently.
         </p>
 
         <div className="mt-8 flex gap-4 justify-center">
           <Link to={'/login'} 
-                className="px-6 py-3 rounded-lg bg-purple-600 hover:bg-purple-700 transition cursor-pointer">
+                className="px-6 py-3 rounded-lg bg-purple-600 hover:bg-purple-700 transition cursor-pointer
+                font-fira-sans">
                 Login
           </Link>
           <Link to={'/register'} 
-                className="px-6 py-3 rounded-lg border border-purple-400 hover:bg-purple-500/20 transition cursor-pointer">
+                className="px-6 py-3 rounded-lg border border-purple-400 hover:bg-purple-500/20 transition cursor-pointer font-fira-sans">
                 Register
           </Link>
         </div>
