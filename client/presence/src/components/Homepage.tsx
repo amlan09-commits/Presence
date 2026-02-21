@@ -9,7 +9,7 @@ const Homepage = () => {
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-fuchsia-500 rounded-full blur-3xl opacity-30"></div>
 
       <div className="relative z-10 text-center px-6">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
           Presence
         </h1>
 
