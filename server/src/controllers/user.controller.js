@@ -1,5 +1,5 @@
 export const registerUser = async (req, res) => {
-    const {firstname, lastname, username, password, email } = req.body
+    const { firstname, lastname, username, password, email } = req.body
     console.log(req.body)
      return await res.status(200).json({
         message : "OK",

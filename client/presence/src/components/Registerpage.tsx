@@ -120,7 +120,7 @@ const Registerpage = () => {
 
       <div className="relative z-10 w-full max-w-md bg-gray-100 backdrop-blur-xl rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/20">
 
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center mb-6 uppercase">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center mb-6 uppercase font-fira-sans">
           Create Account
         </h2>
 
@@ -133,7 +133,7 @@ const Registerpage = () => {
               placeholder="First Name"
               value={formData.firstname}
               onChange={handleChange}
-              className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
             />
             <input
               type="text"
@@ -141,7 +141,7 @@ const Registerpage = () => {
               placeholder="Last Name"
               value={formData.lastname}
               onChange={handleChange}
-              className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
             />
           </div>
 
@@ -151,7 +151,7 @@ const Registerpage = () => {
             placeholder="Username"
             value={formData.username}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
           />
 
           <input
@@ -160,7 +160,7 @@ const Registerpage = () => {
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
           />
 
           <input
@@ -169,7 +169,7 @@ const Registerpage = () => {
             placeholder="Password"
             value={formData.password}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
           />
 
           <input
@@ -178,7 +178,7 @@ const Registerpage = () => {
             placeholder="Confirm Password"
             value={formData.confirmPassword}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
           />
 
           {error && (
@@ -188,7 +188,7 @@ const Registerpage = () => {
           <button
               type="button"
               onClick={() => setShowPassword(prev => !prev)}
-              className="cursor-pointer text-gray-800 flex flex-row gap-0.5 justify-center items-center mx-auto font-medium
+              className="cursor-pointer text-gray-800 flex flex-row gap-0.5 justify-center items-center mx-auto font-medium font-fira-sans
               "
             >
               Show password{showPassword ? <IoEye /> : <IoEyeOff />}
@@ -197,15 +197,15 @@ const Registerpage = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 rounded-lg bg-purple-600 hover:bg-purple-700 transition font-semibold text-white disabled:opacity-50"
+            className="w-full py-3 rounded-lg bg-purple-600 hover:bg-purple-700 transition font-semibold text-white disabled:opacity-50 font-fira-sans"
           >
             {loading ? "Creating..." : "Register"}
           </button>
         </form>
 
-        <p className="text-center text-gray-400 mt-6 text-sm">
+        <p className="text-center text-gray-400 mt-6 text-sm font-fira-sans">
           Already have an account?{" "}
-          <Link to="/login" className="text-purple-400 hover:underline">
+          <Link to="/login" className="text-purple-400 hover:underline font-fira-sans">
             Login
           </Link>
         </p>
