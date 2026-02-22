@@ -38,7 +38,7 @@ const Registerpage = () => {
     e.preventDefault()
     setError(null)
 
-    // ✅ Empty check (trim prevents only spaces)
+    //Empty check
     if (
       !formData.firstname.trim() ||
       !formData.lastname.trim() ||
@@ -51,20 +51,20 @@ const Registerpage = () => {
       return
     }
 
-    // ✅ Email format check
+    //Email format check
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(formData.email)) {
       setError("Invalid email format")
       return
     }
 
-    // ✅ Password length check
+    //Password length check
     if (formData.password.length < 6) {
       setError("Password must be at least 6 characters")
       return
     }
 
-    // ✅ Confirm password check
+    //Confirm password check
     if (formData.password !== formData.confirmPassword) {
       setError("Passwords do not match")
       return
@@ -98,7 +98,7 @@ const Registerpage = () => {
         return
       }
 
-      // ✅ Success
+      //Success and navigate to login page
       navigate("/login")
 
     } catch (err) {
@@ -109,20 +109,21 @@ const Registerpage = () => {
   }
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-[#0f172a] overflow-hidden px-4">
+    <div className="relative min-h-screen flex items-center justify-center bg-linear-to-br from-white to-purple-50 text-gray-800 overflow-hidden px-4">
 
-      <div className="absolute top-10 left-10 w-72 sm:w-96 h-72 sm:h-96 bg-purple-600 rounded-full blur-3xl opacity-30"></div>
-      <div className="absolute bottom-10 right-10 w-72 sm:w-96 h-72 sm:h-96 bg-fuchsia-500 rounded-full blur-3xl opacity-30"></div>
+      <div className="absolute top-10 left-10 w-72 h-72 bg-purple-300 rounded-full blur-[100px] opacity-60"></div>
+      <div className="absolute bottom-10 right-10 w-72 h-72 bg-pink-300 rounded-full blur-[100px] opacity-60"></div>
+      <div className="absolute top-10 right-70 w-72 h-72 bg-blue-300 rounded-full blur-[150px] opacity-60"></div>
+      <div className="absolute bottom-10 left-80 w-72 h-72 bg-red-300 rounded-full blur-[150px] opacity-60"></div>
 
-      <div className="relative z-10 w-full max-w-md bg-white/10 backdrop-blur-xl rounded-2xl p-6 sm:p-8 shadow-xl border border-white/10">
+      <div className="relative z-10 w-full max-w-md bg-gray-100 backdrop-blur-xl rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/20">
 
-        <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-6">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center mb-6 uppercase">
           Create Account
         </h2>
 
         <form className="space-y-4" onSubmit={handleSubmit}>
 
-          {/* First + Last */}
           <div className="flex flex-col sm:flex-row gap-4">
             <input
               type="text"
@@ -130,7 +131,7 @@ const Registerpage = () => {
               placeholder="First Name"
               value={formData.firstname}
               onChange={handleChange}
-              className="w-full px-4 py-2 rounded-lg bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
             <input
               type="text"
@@ -138,7 +139,7 @@ const Registerpage = () => {
               placeholder="Last Name"
               value={formData.lastname}
               onChange={handleChange}
-              className="w-full px-4 py-2 rounded-lg bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
           </div>
 
@@ -148,7 +149,7 @@ const Registerpage = () => {
             placeholder="Username"
             value={formData.username}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded-lg bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
 
           <input
@@ -157,7 +158,7 @@ const Registerpage = () => {
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded-lg bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
 
           <input
@@ -166,7 +167,7 @@ const Registerpage = () => {
             placeholder="Password"
             value={formData.password}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded-lg bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
 
           <input
@@ -175,7 +176,7 @@ const Registerpage = () => {
             placeholder="Confirm Password"
             value={formData.confirmPassword}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded-lg bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
 
           {error && (
