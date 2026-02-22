@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom"
 import React, { useState } from "react"
+import { IoEye, IoEyeOff } from "react-icons/io5"
 
 type FormData = {
   firstname: string
@@ -24,6 +25,7 @@ const Registerpage = () => {
 
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState<boolean>(false)
+  const [showPassword, setShowPassword] = useState<Boolean>(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -162,7 +164,7 @@ const Registerpage = () => {
           />
 
           <input
-            type="password"
+            type={showPassword? "text" : "password"}
             name="password"
             placeholder="Password"
             value={formData.password}
@@ -171,7 +173,7 @@ const Registerpage = () => {
           />
 
           <input
-            type="password"
+            type={showPassword? "text" : "password"}
             name="confirmPassword"
             placeholder="Confirm Password"
             value={formData.confirmPassword}
@@ -182,6 +184,15 @@ const Registerpage = () => {
           {error && (
             <p className="text-red-400 text-sm text-center">{error}</p>
           )}
+
+          <button
+              type="button"
+              onClick={() => setShowPassword(prev => !prev)}
+              className="cursor-pointer text-gray-800 flex flex-row gap-0.5 justify-center items-center mx-auto font-medium
+              "
+            >
+              Show password{showPassword ? <IoEye /> : <IoEyeOff />}
+           </button>
 
           <button
             type="submit"
