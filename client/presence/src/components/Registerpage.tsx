@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom"
 import React, { useState } from "react"
 import { IoEye, IoEyeOff } from "react-icons/io5"
+import { motion } from "framer-motion"
 
 type FormData = {
   firstname: string
@@ -118,7 +119,12 @@ const Registerpage = () => {
       <div className="absolute top-10 right-70 w-72 h-72 bg-blue-300 rounded-full blur-[150px] opacity-60"></div>
       <div className="absolute bottom-10 left-80 w-72 h-72 bg-red-300 rounded-full blur-[150px] opacity-60"></div>
 
-      <div className="relative z-10 w-full max-w-md bg-gray-100 backdrop-blur-xl rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/20">
+      <motion.div 
+      initial={{ opacity: 0, y: 40, scale: 0.9 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.8 }}
+      className="relative z-10 w-full max-w-md bg-gray-100 backdrop-blur-xl rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/20"
+      >
 
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center mb-6 uppercase font-fira-sans">
           Create Account
@@ -133,7 +139,7 @@ const Registerpage = () => {
               placeholder="First Name"
               value={formData.firstname}
               onChange={handleChange}
-              className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
+              className="w-full px-4 py-2 rounded-lg bg-white/80 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
             />
             <input
               type="text"
@@ -141,7 +147,7 @@ const Registerpage = () => {
               placeholder="Last Name"
               value={formData.lastname}
               onChange={handleChange}
-              className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
+              className="w-full px-4 py-2 rounded-lg bg-white/80 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
             />
           </div>
 
@@ -151,7 +157,7 @@ const Registerpage = () => {
             placeholder="Username"
             value={formData.username}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
+            className="w-full px-4 py-2 rounded-lg bg-white/80 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
           />
 
           <input
@@ -160,7 +166,7 @@ const Registerpage = () => {
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
+            className="w-full px-4 py-2 rounded-lg bg-white/80 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
           />
 
           <input
@@ -169,7 +175,7 @@ const Registerpage = () => {
             placeholder="Password"
             value={formData.password}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
+            className="w-full px-4 py-2 rounded-lg bg-white/80 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
           />
 
           <input
@@ -178,7 +184,7 @@ const Registerpage = () => {
             placeholder="Confirm Password"
             value={formData.confirmPassword}
             onChange={handleChange}
-            className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
+            className="w-full px-4 py-2 rounded-lg bg-white/80 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
           />
 
           {error && (
@@ -210,7 +216,7 @@ const Registerpage = () => {
           </Link>
         </p>
 
-      </div>
+      </motion.div>
     </div>
   )
 }

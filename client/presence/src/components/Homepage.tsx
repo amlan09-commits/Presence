@@ -8,16 +8,10 @@ const Homepage = () => {
     <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden 
     bg-linear-to-br from-purple-100 via-white to-pink-100 animate-gradient text-gray-800">
 
-      <motion.div
-        animate={{ y: [0, -30, 0] }}
-        transition={{ duration: 6, repeat: Infinity }}
-        className="absolute top-10 left-10 w-72 h-72 bg-purple-300 rounded-full blur-[120px] opacity-50"
-      />
-      <motion.div
-        animate={{ y: [0, 30, 0] }}
-        transition={{ duration: 7, repeat: Infinity }}
-        className="absolute bottom-10 right-10 w-72 h-72 bg-pink-300 rounded-full blur-[120px] opacity-50"
-      />
+      <div className="absolute top-10 left-10 w-72 h-72 bg-purple-300 rounded-full blur-[100px] opacity-60"></div>
+      <div className="absolute bottom-10 right-10 w-72 h-72 bg-pink-300 rounded-full blur-[100px] opacity-60"></div>
+      <div className="absolute top-10 right-70 w-72 h-72 bg-blue-300 rounded-full blur-[150px] opacity-60"></div>
+      <div className="absolute bottom-10 left-80 w-72 h-72 bg-red-300 rounded-full blur-[150px] opacity-60"></div>
 
       <motion.div
         initial={{ opacity: 0, y: 40 }}

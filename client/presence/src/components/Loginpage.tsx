@@ -20,8 +20,8 @@ const Loginpage = () => {
       <div className="absolute bottom-10 left-80 w-72 h-72 bg-red-300 rounded-full blur-[150px] opacity-60"></div>
 
       <motion.div 
-      initial={{ opacity: 0, y: 40}}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 40, scale: 0.9 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.8 }}
       className="relative z-10 w-full max-w-md bg-gray-100 backdrop-blur-xl rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/20"
       >
