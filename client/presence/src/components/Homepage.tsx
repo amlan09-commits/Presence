@@ -1,40 +1,78 @@
 import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
 
 const Homepage = () => {
+  const year = new Date().getFullYear()
+
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-linear-to-br from-white to-purple-50 text-gray-800">
+    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden 
+    bg-linear-to-br from-purple-100 via-white to-pink-100 animate-gradient text-gray-800">
 
-      <div className="absolute top-10 left-10 w-72 h-72 bg-purple-300 rounded-full blur-[100px] opacity-60"></div>
-      <div className="absolute bottom-10 right-10 w-72 h-72 bg-pink-300 rounded-full blur-[100px] opacity-60"></div>
-      <div className="absolute top-10 right-70 w-72 h-72 bg-blue-300 rounded-full blur-[150px] opacity-60"></div>
-      <div className="absolute bottom-10 left-80 w-72 h-72 bg-red-300 rounded-full blur-[150px] opacity-60"></div>
+      <motion.div
+        animate={{ y: [0, -30, 0] }}
+        transition={{ duration: 6, repeat: Infinity }}
+        className="absolute top-10 left-10 w-72 h-72 bg-purple-300 rounded-full blur-[120px] opacity-50"
+      />
+      <motion.div
+        animate={{ y: [0, 30, 0] }}
+        transition={{ duration: 7, repeat: Infinity }}
+        className="absolute bottom-10 right-10 w-72 h-72 bg-pink-300 rounded-full blur-[120px] opacity-50"
+      />
 
-
-      <div className="relative z-10 text-center px-6">
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold bg-linear-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent pointer-events-none">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="relative z-10 text-center px-6 flex-1 flex flex-col justify-center"
+      >
+        <motion.h1
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="text-6xl md:text-8xl font-extrabold 
+          bg-linear-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent"
+        >
           Presence
-        </h1>
+        </motion.h1>
 
-        <p className="text-base sm:text-lg md:text-xl lg:text-2xl mt-6 max-w-lg mx-auto text-gray-600 font-fira-sans pointer-events-none">
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+          className="text-base sm:text-lg md:text-xl lg:text-2xl mt-6 max-w-lg mx-auto text-gray-600 font-fira-sans"
+        >
           Welcome to Presence — a simple and smart way to manage attendance efficiently.
-        </p>
+        </motion.p>
 
-        <div className="mt-8 flex gap-4 justify-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8, duration: 1 }}
+          className="mt-8 flex gap-4 justify-center"
+        >
           <Link
             to={"/login"}
-            className="px-6 py-3 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition font-semibold shadow-md"
+            className="px-6 py-3 rounded-lg bg-purple-600 text-white 
+            hover:bg-purple-700 hover:scale-105 transition-all duration-300 
+            font-semibold shadow-md"
           >
             Login
           </Link>
 
           <Link
             to={"/register"}
-            className="px-6 py-3 rounded-lg border border-purple-600 text-purple-600 hover:bg-purple-100 transition font-semibold"
+            className="px-6 py-3 rounded-lg border border-purple-600 text-purple-600 
+            hover:bg-purple-600 hover:text-white hover:scale-105 transition-all duration-300 
+            font-semibold"
           >
             Register
           </Link>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
+
+      <footer className="relative z-10 pb-6 text-center text-sm text-gray-500">
+        © {year} Presence. All Rights Reserved.
+      </footer>
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
-import { IoEye, IoEyeOff } from "react-icons/io5";
+import { IoEye, IoEyeOff } from "react-icons/io5"
+import { motion } from "framer-motion"
 
 const Loginpage = () => {
 
@@ -18,7 +19,12 @@ const Loginpage = () => {
       <div className="absolute top-10 right-70 w-72 h-72 bg-blue-300 rounded-full blur-[150px] opacity-60"></div>
       <div className="absolute bottom-10 left-80 w-72 h-72 bg-red-300 rounded-full blur-[150px] opacity-60"></div>
 
-      <div className="relative z-10 w-full max-w-md bg-gray-100 backdrop-blur-xl rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/20">
+      <motion.div 
+      initial={{ opacity: 0, y: 40}}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="relative z-10 w-full max-w-md bg-gray-100 backdrop-blur-xl rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/20"
+      >
 
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center mb-6 uppercase font-fira-sans">
           Login
@@ -30,21 +36,21 @@ const Loginpage = () => {
             type="email"
             name="email"
             placeholder="Email"
-            className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
+            className="w-full px-4 py-2 rounded-lg bg-white/80 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
           />
 
           <input
             type={showPassword? "text" : "password"}
             name="password"
             placeholder="Password"
-            className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
+            className="w-full px-4 py-2 rounded-lg bg-white/80 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
           />
 
           <input
             type={showPassword? "text" : "password"}
             name="confirmPassword"
             placeholder="Confirm Password"
-            className="w-full px-4 py-2 rounded-lg bg-white/60 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
+            className="w-full px-4 py-2 rounded-lg bg-white/80 text-gray-800 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 font-fira-sans"
           />
 
           <button
@@ -70,7 +76,7 @@ const Loginpage = () => {
           </Link>
         </p>
 
-      </div>
+      </motion.div>
     </div>
   )
 }
