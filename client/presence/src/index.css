@@ -8,3 +8,38 @@
 @utility font-fira-sans{
     font-family: "Fira Sans", sans-serif;
 }
+
+/* ===== React Calendar Custom Colors ===== */
+
+.react-calendar {
+  border: none;
+  width: 100%;
+  font-family: inherit;
+}
+
+.react-calendar__tile {
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+
+.react-calendar__tile.present-tile {
+  background: #22c55e !important;
+  color: white !important;
+}
+
+.react-calendar__tile.absent-tile {
+  background: #ef4444 !important;
+  color: white !important;
+}
+
+.react-calendar__tile.holiday-tile {
+  background: #eab308 !important;
+  color: white !important;
+}
+
+.react-calendar__tile.present-tile:hover,
+.react-calendar__tile.absent-tile:hover,
+.react-calendar__tile.holiday-tile:hover {
+  opacity: 0.85;
+}

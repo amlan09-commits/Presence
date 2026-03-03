@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 
+
 const Homepage = () => {
   const year = new Date().getFullYear()
 
