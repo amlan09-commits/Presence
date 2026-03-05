@@ -164,7 +164,7 @@ Logout
 
 <div className="bg-white shadow-lg rounded-xl p-4">
 
-<h2 className="font-semibold mb-3">Subjects</h2>
+<h2 className="font-bold mb-3">Subjects</h2>
 
 <div className="flex gap-2 mb-4">
 
