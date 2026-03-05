@@ -139,19 +139,19 @@ navigate("/login")
 
 return(
 
-<div className="min-h-screen bg-gradient-to-br from-purple-100 via-white to-pink-100 p-4 sm:p-6">
+<div className="min-h-screen bg-linear-to-br from-purple-100 via-white to-pink-100 p-4 sm:p-6">
 
 {/* TOP BAR */}
 
 <div className="flex justify-between items-center mb-6">
 
 <h1 className="text-2xl sm:text-3xl font-bold text-purple-700">
-Presence Dashboard
+DASHBOARD
 </h1>
 
 <button
 onClick={logout}
-className="bg-red-500 text-white px-4 py-2 rounded-md text-sm hover:bg-red-600"
+className="bg-red-500 text-white px-4 py-2 rounded-md text-sm hover:bg-red-600 cursor-pointer"
 >
 Logout
 </button>
@@ -177,7 +177,7 @@ className="flex-1 border rounded-lg px-3 py-2 text-sm"
 
 <button
 onClick={addSubject}
-className="bg-purple-600 text-white px-3 py-2 rounded-lg text-sm"
+className="bg-purple-600 text-white px-3 py-2 rounded-lg text-sm cursor-pointer"
 >
 Add
 </button>
@@ -206,7 +206,7 @@ className="cursor-pointer flex-1"
 
 <button
 onClick={()=>removeSubject(sub)}
-className="text-red-500 text-xs"
+className="text-red-500 text-xs cursor-pointer"
 >
 Remove
 </button>
@@ -247,21 +247,21 @@ Selected Date: {date.toDateString()}
 
 <button
 onClick={()=>markAttendance("Present")}
-className="bg-green-500 text-white px-4 py-2 rounded"
+className="bg-green-500 text-white px-4 py-2 rounded cursor-pointer"
 >
 Present
 </button>
 
 <button
 onClick={()=>markAttendance("Absent")}
-className="bg-red-500 text-white px-4 py-2 rounded"
+className="bg-red-500 text-white px-4 py-2 rounded cursor-pointer"
 >
 Absent
 </button>
 
 <button
 onClick={()=>markAttendance("Holiday")}
-className="bg-yellow-500 text-white px-4 py-2 rounded"
+className="bg-yellow-500 text-white px-4 py-2 rounded cursor-pointer"
 >
 Holiday
 </button>
